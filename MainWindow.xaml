@@ -1,0 +1,51 @@
+﻿<Window x:Class="CybersecurityAwarenessBotPart2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CybersecurityAwarenessBotPart2"
+        mc:Ignorable="d"
+        Title="Cybersecurity Awareness Bot" Height="600" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="CYBERSECURITY AWARENESS BOT"
+                   Grid.Row="0"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Margin="20"
+                   HorizontalAlignment="Center"/>
+
+        <TextBox x:Name="ChatHistory"
+                 Grid.Row="1"
+                 Margin="20,0,20,0"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto"
+                 FontSize="14"
+                 Padding="10"
+                Text="Welcome to the Cybersecurity Awareness Bot!&#10;I'm here to help you learn how to stay safe online."/>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    Margin="20">
+
+            <TextBox x:Name="UserInput"
+                     Width="680"
+                     Height="35"
+                     FontSize="14"
+                     VerticalContentAlignment="Center"
+                     Margin="0,0,10,0"/>
+
+            <Button x:Name="SendButton"
+                    Content="Send"
+                    Width="100"
+                    Height="35"
+                    Click="SendButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
