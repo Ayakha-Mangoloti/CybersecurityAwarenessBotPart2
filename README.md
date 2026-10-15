@@ -4,11 +4,14 @@
 The Cybersecurity Awareness Bot is a C# WPF desktop application designed to help users learn about cybersecurity and develop safer online habits. It provides interactive responses to cybersecurity questions through a graphical user interface.
 
 ## 2. Features
-- **Keyword Recognition:** Provides information about passwords, phishing, scams, malware and Wi-Fi safety.
+- **Keyword Recognition:** Recognises cybersecurity topics such as passwords, phishing, scams, malware and Wi-Fi saftey.
 - **Random Responses:** Uses varied greeting responses to make conversations less repetitive.
 - **Conversation Memory:** Remembers the user's favourite cybersecurity topic during the current session.
 - **Sentiment Detection:** Recognises expressions of worry, frustration and positive feelings.
 - **Graphical User Interface:** Provides a desktop chat interface for interacting with the bot.
+- **Voice Greeting:** Plays a WAV audio greeting when the application starts.
+- **Delegates:** Uses a ResponseHandler delegate to handle the bot's default response
+- 
 
 ## 3. Technologies Used
 - C#
