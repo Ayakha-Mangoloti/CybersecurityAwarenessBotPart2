@@ -1,51 +1,120 @@
 ﻿<Window x:Class="CybersecurityAwarenessBotPart2.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CybersecurityAwarenessBotPart2"
-        mc:Ignorable="d"
-        Title="Cybersecurity Awareness Bot" Height="600" Width="900">
-    <Grid>
+        Title="Cybersecurity Awareness Bot"
+        Height="650" Width="900"
+        MinHeight="500" MinWidth="650"
+        WindowStartupLocation="CenterScreen"
+        Background="#F1F5F9">
+
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="CYBERSECURITY AWARENESS BOT"
-                   Grid.Row="0"
-                   FontSize="24"
-                   FontWeight="Bold"
-                   Margin="20"
-                   HorizontalAlignment="Center"/>
+        <!-- Header -->
+        <Border Grid.Row="0"
+                Background="#102A43"
+                CornerRadius="12"
+                Padding="20"
+                Margin="0,0,0,16">
+            <StackPanel>
+                <TextBlock Text="&#x1F512; CYBERSECURITY AWARENESS"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           TextAlignment="Center"
+                           TextWrapping="Wrap"/>
 
-        <TextBox x:Name="ChatHistory"
-                 Grid.Row="1"
-                 Margin="20,0,20,0"
-                 IsReadOnly="True"
-                 TextWrapping="Wrap"
-                 VerticalScrollBarVisibility="Auto"
-                 FontSize="14"
-                 Padding="10"
-                Text="Welcome to the Cybersecurity Awareness Bot!&#10;I'm here to help you learn how to stay safe online."/>
+                <TextBlock Text="Stay safe. Stay secure."
+                           FontSize="14"
+                           Foreground="#B9D7EA"
+                           TextAlignment="Center"
+                           Margin="0,8,0,0"/>
+            </StackPanel>
+        </Border>
 
-        <StackPanel Grid.Row="2"
-                    Orientation="Horizontal"
-                    Margin="20">
+        <!-- Chat area -->
+        <Border Grid.Row="1"
+                Background="White"
+                CornerRadius="12"
+                Padding="12"
+                Margin="0,0,0,16"
+                BorderBrush="#D9E2EC"
+                BorderThickness="1">
 
-            <TextBox x:Name="UserInput"
-                     Width="680"
-                     Height="35"
-                     FontSize="14"
-                     VerticalContentAlignment="Center"
-                     Margin="0,0,10,0"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-            <Button x:Name="SendButton"
-                    Content="Send"
-                    Width="100"
-                    Height="35"
-                    Click="SendButton_Click"/>
-        </StackPanel>
+                <Image Grid.Row="0"
+                       Source="Images/cybersecurity-art.png"
+                       Height="200"
+                       Width="300"
+                       Stretch="Uniform"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,10"/>
+
+                <TextBox x:Name="ChatHistory"
+                         Grid.Row="1"
+                         IsReadOnly="True"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         VerticalScrollBarVisibility="Auto"
+                         HorizontalScrollBarVisibility="Disabled"
+                         FontSize="14"
+                         Padding="14"
+                         Background="White"
+                        Foreground="#243B53"
+                        BorderThickness="0"
+                      Text="Welcome to the Cybersecurity Awareness Bot!&#10;I'm here to help you learn how to stay safe online."/>
+            </Grid>
+        </Border>
+
+        <!-- Message input -->
+        <Border Grid.Row="2"
+                Background="White"
+                CornerRadius="12"
+                Padding="12"
+                BorderBrush="#D9E2EC"
+                BorderThickness="1">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="UserInput"
+                         Grid.Column="0"
+                         MinHeight="42"
+                         FontSize="14"
+                         Padding="10"
+                         VerticalContentAlignment="Center"
+                         Margin="0,0,12,0"
+                         BorderBrush="#BCCCDC"
+                         ToolTip="Type your cybersecurity question here"/>
+
+                <Button x:Name="SendButton"
+                        Grid.Column="1"
+                        Content="Send  &#x27A4;"
+                        Width="110"
+                        MinHeight="42"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Background="#147D64"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="SendButton_Click"/>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
+ 
+            
+         
