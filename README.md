@@ -56,3 +56,20 @@ The unlisted YouTube presentation link will be added here once the video has bee
 
 ## 10. Future Improvements
 Future improvements may include additional cybersecurity topics, more personalised responses, enhanced conversation flow and further interface refinements.
+
+## 11. Testing and Verfication
+The Cybersecurity Awareness Bot was tested to verify its main features:
+
+Keyword recognition: Tested cybersecurity topics such as passwords, phishing, scams, privacy, malware and Wi-Fi safety.
+
+Random responses: Verified that the chatbot can provide different greetings and cybersecurity tips.
+
+Conversation memory: Tested whether the chatbot remembers the user's name and favourite topic during the conversation.
+
+Sentiment detection: Tested responses to messages expressing worry, frustration and positive emotions.
+
+Graphical user interface: Checked the chat history, message input, Send button and cybersecurity artwork.
+
+Voice greeting: Checked that the greeting audio plays when the application starts.
+
+Build and execution: Confirmed that the application builds and runs successfully in Visual Studio 2022.
