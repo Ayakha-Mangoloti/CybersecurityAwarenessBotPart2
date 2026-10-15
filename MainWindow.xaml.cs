@@ -88,7 +88,7 @@ namespace CybersecurityAwarenessBotPart2
             }
             else if (isFrustrated)
             {
-                response = "I understand that cybersecurity can feel confusing or frustrating. Lets take it one step at a time. What would you like help with?";
+                response = "I understand that cybersecurity can feel confusing or frustrating. Let's take it one step at a time. What would you like help with?";
             }
             else if (isPositive)
             {
