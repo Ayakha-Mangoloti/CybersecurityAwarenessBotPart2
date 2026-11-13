@@ -2,13 +2,14 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Cybersecurity Awareness Bot"
-        Height="650" Width="900"
-        MinHeight="500" MinWidth="650"
+        Height="750" Width="900"
+        MinHeight="650" MinWidth="650"
         WindowStartupLocation="CenterScreen"
         Background="#F1F5F9">
 
     <Grid Margin="24">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -19,7 +20,7 @@
                 Background="#102A43"
                 CornerRadius="12"
                 Padding="20"
-                Margin="0,0,0,16">
+                Margin="0,0,0,12">
             <StackPanel>
                 <TextBlock Text="&#x1F512; CYBERSECURITY AWARENESS"
                            FontSize="22"
@@ -36,12 +37,105 @@
             </StackPanel>
         </Border>
 
-        <!-- Chat area -->
+        <!-- Task Management Panel -->
         <Border Grid.Row="1"
                 Background="White"
                 CornerRadius="12"
                 Padding="12"
-                Margin="0,0,0,16"
+                Margin="0,0,0,12"
+                BorderBrush="#D9E2EC"
+                BorderThickness="1">
+
+            <StackPanel>
+                <TextBlock Text="TASK MANAGEMENT"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="#102A43"
+                           Margin="0,0,0,10"/>
+
+                <WrapPanel Margin="0,0,0,10">
+                    <TextBox x:Name="TaskTitleInput"
+                             Width="170"
+                             Height="32"
+                             Margin="0,0,8,5"
+                             Padding="6"
+                             ToolTip="Task title"/>
+
+                    <TextBox x:Name="TaskDescriptionInput"
+                             Width="190"
+                             Height="32"
+                             Margin="0,0,8,5"
+                             Padding="6"
+                             ToolTip="Task description"/>
+
+                    <DatePicker x:Name="TaskReminderDatePicker"
+                                Width="145"
+                                Height="32"
+                                Margin="0,0,8,5"/>
+
+                    <Button Content="Add Task"
+                            Width="90"
+                            Height="32"
+                            Margin="0,0,0,5"
+                            Background="#147D64"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Click="AddTaskButton_Click"/>
+                </WrapPanel>
+
+                <TextBlock Text="Saved Tasks"
+                           FontWeight="SemiBold"
+                           Foreground="#243B53"
+                           Margin="0,0,0,5"/>
+
+                <ListBox x:Name="TaskListBox"
+                         Height="85"
+                         BorderBrush="#D9E2EC"
+                         BorderThickness="1"
+                         Margin="0,0,0,8">
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Title}"
+                                           FontWeight="SemiBold"
+                                           Width="250"/>
+
+                                <TextBlock Text="{Binding Status}"
+                                           Foreground="#147D64"
+                                           Width="100"/>
+
+                                <TextBlock Text="{Binding ReminderDate, StringFormat={}{0:dd MMM yyyy}}"
+                                           Foreground="#627D98"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <WrapPanel>
+                    <Button Content="Mark Complete"
+                            Width="125"
+                            Margin="0,0,8,0"
+                            Click="CompleteSelectedTaskButton_Click"/>
+
+                    <Button Content="Delete Selected"
+                            Width="125"
+                            Margin="0,0,8,0"
+                            Click="DeleteSelectedTaskButton_Click"/>
+
+                    <Button Content="Refresh Tasks"
+                            Width="110"
+                            Click="RefreshTasksButton_Click"/>
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Chat Area -->
+        <Border Grid.Row="2"
+                Background="White"
+                CornerRadius="12"
+                Padding="12"
+                Margin="0,0,0,12"
                 BorderBrush="#D9E2EC"
                 BorderThickness="1">
 
@@ -53,7 +147,7 @@
 
                 <Image Grid.Row="0"
                        Source="Images/cybersecurity-art.png"
-                       Height="200"
+                       Height="150"
                        Width="300"
                        Stretch="Uniform"
                        HorizontalAlignment="Center"
@@ -69,14 +163,14 @@
                          FontSize="14"
                          Padding="14"
                          Background="White"
-                        Foreground="#243B53"
-                        BorderThickness="0"
-                      Text="Welcome to the Cybersecurity Awareness Bot!&#10;I'm here to help you learn how to stay safe online."/>
+                         Foreground="#243B53"
+                         BorderThickness="0"
+                         Text="Welcome to the Cybersecurity Awareness Bot!&#10;I'm here to help you learn how to stay safe online."/>
             </Grid>
         </Border>
 
-        <!-- Message input -->
-        <Border Grid.Row="2"
+        <!-- Message Input -->
+        <Border Grid.Row="3"
                 Background="White"
                 CornerRadius="12"
                 Padding="12"
@@ -115,6 +209,7 @@
         </Border>
     </Grid>
 </Window>
+
  
             
          
