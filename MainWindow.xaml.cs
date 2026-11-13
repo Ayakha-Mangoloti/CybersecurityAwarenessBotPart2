@@ -451,8 +451,17 @@ namespace CybersecurityAwarenessBotPart2
             if (message.Contains("worried") || message.Contains("scared"))
                 return "Emotional Support";
 
-            if (message.Contains("hello") || message.Contains("hi"))
+            string cleanMessage = message.Trim().TrimEnd('!', '.', '?', ',');
+
+            if (cleanMessage == "hello" || cleanMessage == "hi" ||
+                cleanMessage.StartsWith("hello ") ||
+                cleanMessage.StartsWith("hi ") ||
+                cleanMessage.StartsWith("good morning") ||
+                cleanMessage.StartsWith("good afternoon") ||
+                cleanMessage.StartsWith("good evening"))
+            {
                 return "Greeting";
+            }
 
             return "General Cybersecurity Query";
         }
