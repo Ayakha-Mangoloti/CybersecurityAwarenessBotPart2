@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Classes\TaskItem.cs\**" />
+    <EmbeddedResource Remove="Classes\TaskItem.cs\**" />
+    <None Remove="Classes\TaskItem.cs\**" />
+    <Page Remove="Classes\TaskItem.cs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Audio\greeting.wav" />
     <None Remove="Images\cybersecurity-art.png" />
   </ItemGroup>
@@ -20,6 +27,10 @@
     <Content Include="Images\cybersecurity-art.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="26.10.0" />
   </ItemGroup>
 
 </Project>
